@@ -1,4 +1,5 @@
 # Book-My-Show
+![bms](https://github.com/dhrax21/Book-my-Shows/assets/112228200/0250da39-058d-4424-b952-b357980e8153)
 
 Welcome to BookMyShow, your ultimate destination for hassle-free movie ticket bookings and entertainment experiences! Powered by cutting-edge technology and user-friendly features, BookMyCinema brings the magic of cinema right to your fingertips.
 
