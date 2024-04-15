@@ -1,8 +1,9 @@
 # Book-My-Show
+![bms](https://github.com/dhrax21/Book-my-Shows/assets/112228200/0250da39-058d-4424-b952-b357980e8153)
 
 Welcome to BookMyShow, your ultimate destination for hassle-free movie ticket bookings and entertainment experiences! Powered by cutting-edge technology and user-friendly features, BookMyCinema brings the magic of cinema right to your fingertips.
 
-With BookMyCinema, you can discover and book tickets for the latest blockbuster movies, upcoming releases, and special events at your favorite cinemas, all in just a few clicks. Our intuitive platform allows you to:
+With BookMyShows, you can discover and book tickets for the latest blockbuster movies, upcoming releases, and special events at your favorite cinemas, all in just a few clicks. Our intuitive platform allows you to:
 
 **Explore Exciting Movies:**
 Browse through a curated selection of movies, from Hollywood blockbusters to indie gems and everything in between. Discover movie details, showtimes, and reviews—all in one place.
