@@ -1,9 +1,14 @@
-FROM openjdk:21
+# Use lightweight Java 17 runtime
+FROM eclipse-temurin:17-jre-alpine
 
+# Set working directory inside container
 WORKDIR /app
 
-COPY target/Book_My_Show-0.0.1-SNAPSHOT.jar /app/Book_My_Show-0.0.1-SNAPSHOT.jar
+# Copy the built JAR into container
+COPY target/*.jar app.jar
 
+# Expose Spring Boot port
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "Book_My_Show-0.0.1-SNAPSHOT.jar"]
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
