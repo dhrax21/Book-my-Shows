@@ -24,19 +24,31 @@ jobs:
         working-directory: Book_My_Show
         run: mvn clean package -DskipTests
 
-      - name: Deploy to GCP VM via SSH
+
+      - name: Setup SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VM_SSH_KEY }}
+
+      - name: Deploy to GCP VM
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.VM_SSH_KEY }}
+          port: 22
           script: |
+            set -e
+
+            echo "Stopping old container..."
             docker stop book-my-show || true
             docker rm book-my-show || true
 
+            echo "Building Docker image..."
             docker build -t book-my-show-api Book_My_Show
 
+            echo "Running new container..."
             docker run -d \
+              --restart unless-stopped \
               -e SPRING_PROFILES_ACTIVE=prod \
               -e DB_URL=${{ secrets.DB_URL }} \
               -e DB_USER=${{ secrets.DB_USER }} \
