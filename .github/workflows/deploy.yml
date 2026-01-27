@@ -20,9 +20,12 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # ✅ FIX 1: run Maven where pom.xml exists
       - name: Build Spring Boot JAR
+        working-directory: Book_My_Show
         run: mvn clean package -DskipTests
 
+      # ✅ FIX 2: build Docker image from correct directory on VM
       - name: Deploy to GCP VM via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -33,7 +36,7 @@ jobs:
             docker stop book-my-show || true
             docker rm book-my-show || true
 
-            docker build -t book-my-show-api .
+            docker build -t book-my-show-api Book_My_Show
 
             docker run -d \
               -e SPRING_PROFILES_ACTIVE=prod \
