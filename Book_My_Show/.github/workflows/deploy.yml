@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production   # IMPORTANT: loads environment secrets
+    environment: production
 
     steps:
       - name: Checkout code
@@ -43,3 +43,7 @@ jobs:
               -p 8080:8080 \
               --name book-my-show \
               book-my-show-api
+
+
+
+#  Add CI/CD deployment workflow
